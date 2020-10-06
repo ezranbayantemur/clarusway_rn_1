@@ -3,15 +3,51 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {SafeAreaView, View, Text, StyleSheet} from 'react-native';
+import {
+  SafeAreaView,
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  Platform,
+} from 'react-native';
 
 const App = () => {
+  function sayHello() {
+    const platform = Platform.OS;
+    const version = Platform.Version;
+
+    if (platform === 'ios')
+      return (
+        <Text
+          style={{
+            fontSize: 30,
+          }}>
+          Hello to iPhone: {version}
+        </Text>
+      );
+    else
+      return (
+        <Text
+          style={{
+            fontSize: 30,
+          }}>
+          Hello to Android! {version}
+        </Text>
+      );
+  }
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.container}>
-        <View style={{width: 40, height: 40, backgroundColor: 'red'}} />
-        <View style={{width: 40, height: 40, backgroundColor: 'blue'}} />
-        <View style={{width: 40, height: 40, backgroundColor: 'green'}} />
+        <View style={styles.inputContainer}>
+          <TextInput
+            keyboardType="email-address"
+            placeholder="Aramak istediğiniz ürünü giriniz.."
+          />
+        </View>
+        {/* <Text style={{fontSize: 40}}>Cihaz: {platform} </Text>  */}
+        {sayHello()}
       </View>
     </SafeAreaView>
   );
@@ -22,9 +58,14 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
     backgroundColor: '#e0e0e0',
-    justifyContent: 'center', // 'space-between', 'space-around', 'space-evenly',
-    alignItems: 'flex-start', // flex-start, flex-end
+  },
+  inputContainer: {
+    backgroundColor: 'white',
+    padding: 10,
+    margin: 5,
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 10,
   },
 });
