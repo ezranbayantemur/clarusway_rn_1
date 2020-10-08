@@ -1,7 +1,14 @@
 import React from 'react';
-import {SafeAreaView, View, Text, StyleSheet} from 'react-native';
+import {
+  SafeAreaView,
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 
 import MyBanner from './components/MyBanner';
+import MyButton from './components/MyButton';
 
 const food_data = [
   {
@@ -55,9 +62,31 @@ const App = () => {
             />
           );
         })}
+
+        <TouchableOpacity
+          style={styles.container}
+          onPress={() => alert('Hello')}
+          onLongPress={() => alert('Long Press')}
+        >
+          <Text style={styles.text}>Yenile</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
 };
 
 export default App;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#0277bd',
+    padding: 10,
+    margin: 10,
+    borderRadius: 10,
+  },
+  text: {
+    textAlign: 'center',
+    color: 'white',
+    fontWeight: 'bold',
+  },
+});
