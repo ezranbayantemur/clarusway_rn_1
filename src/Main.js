@@ -3,6 +3,8 @@ import {SafeAreaView, View, Text, StyleSheet} from 'react-native';
 
 import MyBanner from './components/MyBanner';
 
+
+
 const App = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
@@ -18,12 +20,14 @@ const App = () => {
           title="Ara Sıcaklar"
           desc="Lezzetli aparetifler!"
           color="#81d4fa"
+          isActive={true}
         />
 
         <MyBanner
           title="Ana Yemekler"
           desc="Doyurucu lezzetler!"
           color="#ffd54f"
+          isActive={false}
         />
       </View>
     </SafeAreaView>
