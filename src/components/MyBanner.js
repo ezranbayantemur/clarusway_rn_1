@@ -1,10 +1,18 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const MyBanner = () => {
+const MyBanner = (props) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Çorbalar</Text>
+    <View style={[styles.container, {backgroundColor: props.color}]}>
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+
+        <View style={{flex: 1}}>
+          <Text style={styles.text}>{props.title}</Text>
+          <Text>{props.desc}</Text>
+        </View>
+
+        <Text>Aktif Değil</Text>
+      </View>
     </View>
   );
 };
@@ -20,6 +28,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 25,
   },
 });
