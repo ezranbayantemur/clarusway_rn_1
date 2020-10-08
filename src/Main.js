@@ -30,7 +30,14 @@ const food_data = [
     title: 'Alkolsüz İçecekler',
     desc: 'Buz gibi serinletici lezzetler',
     color: '#cfd8dc',
-    isActive: false,
+    isActive: true,
+  },
+  {
+    id: 4,
+    title: 'Alkollü İçecekler',
+    desc: 'Buz gibi serinletici alkollü lezzetler',
+    color: '#c5e1a5',
+    isActive: true,
   },
 ];
 
@@ -38,26 +45,16 @@ const App = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <View>
-        <MyBanner
-          title="Çorbalar"
-          desc="Birbirinden leziz çorbalar!"
-          color="#e57373"
-          isActive={false}
-        />
-
-        <MyBanner
-          title="Ara Sıcaklar"
-          desc="Lezzetli aparetifler!"
-          color="#81d4fa"
-          isActive={true}
-        />
-
-        <MyBanner
-          title="Ana Yemekler"
-          desc="Doyurucu lezzetler!"
-          color="#ffd54f"
-          isActive={false}
-        />
+        {food_data.map((food) => {
+          return (
+            <MyBanner
+              title={food.title}
+              desc={food.desc}
+              color={food.color}
+              isActive={food.isActive}
+            />
+          );
+        })}
       </View>
     </SafeAreaView>
   );
