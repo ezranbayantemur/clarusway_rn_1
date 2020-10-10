@@ -12,7 +12,6 @@ const Login = () => {
                     source={require('./assets/cart.png')}
                     style={styles.logoStyle}
                 />
-                <Text>Login</Text>
             </View>
         </SafeAreaView>
     )
@@ -25,5 +24,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
         resizeMode: 'contain',
         width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height * 0.40
     }
 })
