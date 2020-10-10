@@ -88,33 +88,40 @@ const News = () => {
 
     const listHeader = () => {
         return (
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {
-                    banner_data.map(banner_item => {
-                        return (
-                            <Image
-                                source={{ uri: banner_item.imageUrl }}
-                                style={{
-                                    width: Dimensions.get('window').width * 0.90,
-                                    height: Dimensions.get('window').height / 4,
-                                    margin: 5,
-                                    borderRadius: 10
-                                }}
-                            />
-                        )
-                    })
-                }
-            </ScrollView>
+            <>
+                <Text style={{ fontWeight: 'bold', fontSize: 50, margin: 10 }}>News</Text>
+                <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                    {
+                        banner_data.map(banner_item => {
+                            return (
+                                <Image
+                                    source={{ uri: banner_item.imageUrl }}
+                                    style={{
+                                        width: Dimensions.get('window').width * 0.90,
+                                        height: Dimensions.get('window').height / 4,
+                                        margin: 5,
+                                        borderRadius: 10
+                                    }}
+                                />
+                            )
+                        })
+                    }
+                </ScrollView>
+            </>
         )
     }
 
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView>
 
             <FlatList
                 keyExtractor={(item, index) => index.toString()}
                 data={news_data}
                 renderItem={renderNewsData}
+                numColumns={2}
+                contentContainerStyle={{
+                    justifyContent: 'space-between'
+                }}
                 ListHeaderComponent={listHeader}
             />
 

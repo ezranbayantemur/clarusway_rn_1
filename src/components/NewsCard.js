@@ -28,11 +28,12 @@ export { NewsCard };
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         borderWidth: 1,
         borderColor: '#e0e0e0',
         padding: 5,
         margin: 5,
-        borderRadius: 5
+        borderRadius: 5,
     },
     title: {
         fontWeight: 'bold',
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     description: {
     },
     image: {
-        height: Dimensions.get('window').height * 0.25,
+        height: Dimensions.get('window').height * 0.30, 
         borderRadius: 5,
     }
 
