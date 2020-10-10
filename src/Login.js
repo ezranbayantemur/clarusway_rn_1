@@ -14,6 +14,8 @@ const Login = () => {
 
                 <Input holder="E-posta adresinizi giriniz.." />
                 <Input holder="Şifrenizi giriniz.." />
+
+                <Button text="Giriş Yap" />
             </View>
         </SafeAreaView>
     )
