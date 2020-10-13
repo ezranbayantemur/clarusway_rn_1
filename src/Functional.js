@@ -5,6 +5,8 @@ const App = (props) => {
     //       var,   function
     const [counter, setCounter] = useState(0);
 
+    console.log("Render component..");
+
     return (
         <SafeAreaView>
             <View>
@@ -12,7 +14,7 @@ const App = (props) => {
 
                 <Button
                     title="Up!"
-                    onPress={() => setCounter(counter + 1)}
+                    onPress={() => setCounter(1)}
                 />
             </View>
         </SafeAreaView>

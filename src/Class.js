@@ -8,9 +8,24 @@ class App extends React.Component {
         this.state = {
             counter: 0
         }
+
+        console.log("Constructor");
+    }
+
+    myFunction() {
+        let myVariable = 10;
+
+        myVariable++;
+
+        console.log("myFunction: " + myVariable);
+    }
+
+    componentDidMount() {
+        console.log("Component Did Mount")
     }
 
     render() {
+        console.log("Render")
         return (
             <SafeAreaView>
                 <View>
@@ -18,9 +33,12 @@ class App extends React.Component {
 
                     <Button
                         title="Up!"
-                        onPress={() => this.setState({
-                            counter: this.state.counter + 1
-                        })}
+                        onPress={() => this.setState({ counter: this.state.counter + 1 })}
+                    />
+
+                    <Button
+                        title="Check"
+                        onPress={() => this.myFunction()}
                     />
                 </View>
             </SafeAreaView>
