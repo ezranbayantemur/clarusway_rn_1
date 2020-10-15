@@ -18,8 +18,6 @@ class App extends React.Component {
         console.log("COMPONENT DID MOUNT");
     }
 
-    
-
     render() {
         console.log("RENDER");
         return (
