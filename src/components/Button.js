@@ -11,7 +11,7 @@ const Button = (props) => {
                         backgroundColor: props.color === undefined ? "#a5d6a7" : props.color
                     }
                 ]}
-            onPress={props.sayingHello}
+            onPress={props.myOnPress}
         >
             <Text style={myStyles.textStyle}>{props.banner}</Text>
         </TouchableOpacity>

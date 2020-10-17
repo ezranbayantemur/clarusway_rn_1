@@ -17,19 +17,18 @@ const App = () => {
             </View>
 
             <Button
-                sayingHello={() => sayHello()}
+                myOnPress={() => sayHello()}
                 color="#81d4fa"
                 banner="Press me!!"
             />
 
             <Button
-                sayingHello={() => {
+                myOnPress={() => {
                     Alert.alert("Clarusway", "Fullstack 4ever!")
                 }}
                 color="#81d4fa"
                 banner="Press me and say hi!!"
             />
-
 
         </SafeAreaView>
     )
