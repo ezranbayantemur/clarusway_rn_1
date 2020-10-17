@@ -1,8 +1,8 @@
 // Overall - 1
 import React from 'react';
-import { SafeAreaView, View, Text, Button, TouchableOpacity, StyleSheet } from 'react-native';
+import { SafeAreaView, View, Text } from 'react-native';
 
-import MyButton from './components/Button';
+import Button from './components/Button';
 
 const App = () => {
     return (
@@ -11,7 +11,7 @@ const App = () => {
                 <Text style={{ fontSize: 50 }}>Hello World</Text>
             </View>
 
-            <MyButton />
+            <Button color="#81d4fa" banner="Press me!!" />
 
         </SafeAreaView>
     )

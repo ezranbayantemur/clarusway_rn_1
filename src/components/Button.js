@@ -1,10 +1,13 @@
 import React from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const Button = () => {
+const Button = (props) => {
     return (
-        <TouchableOpacity style={myStyles.buttonContainer}>
-            <Text>Press me!</Text>
+        <TouchableOpacity style={
+            [myStyles.buttonContainer,
+            { backgroundColor: props.color }
+            ]}>
+            <Text style={myStyles.textStyle}>{props.banner}</Text>
         </TouchableOpacity>
     )
 }
@@ -18,5 +21,8 @@ const myStyles = StyleSheet.create({
         margin: 10,
         borderRadius: 5,
         alignItems: 'center'
+    },
+    textStyle: {
+        fontSize: 20
     }
 })
