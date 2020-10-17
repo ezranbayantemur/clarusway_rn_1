@@ -2,33 +2,16 @@
 import React from 'react';
 import { SafeAreaView, View, Text, Alert } from 'react-native';
 
-import Button from './components/Button';
+import InputPanel from './components/InputPanel';
 
 const App = () => {
-
-    function sayHello() {
-        alert("Hello there!")
-    }
-
     return (
         <SafeAreaView>
             <View>
                 <Text style={{ fontSize: 50 }}>Hello World</Text>
             </View>
 
-            <Button
-                myOnPress={() => sayHello()}
-                color="#81d4fa"
-                banner="Press me!!"
-            />
-
-            <Button
-                myOnPress={() => {
-                    Alert.alert("Clarusway", "Fullstack 4ever!")
-                }}
-                color="#81d4fa"
-                banner="Press me and say hi!!"
-            />
+            <InputPanel />
 
         </SafeAreaView>
     )
