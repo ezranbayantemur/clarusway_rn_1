@@ -4,8 +4,11 @@ import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 const Button = (props) => {
     return (
         <TouchableOpacity style={
-            [myStyles.buttonContainer,
-            { backgroundColor: props.color }
+            [
+                myStyles.buttonContainer,
+                {
+                    backgroundColor: props.color === undefined ? "#a5d6a7" : props.color
+                }
             ]}>
             <Text style={myStyles.textStyle}>{props.banner}</Text>
         </TouchableOpacity>

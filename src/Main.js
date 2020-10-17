@@ -11,7 +11,20 @@ const App = () => {
                 <Text style={{ fontSize: 50 }}>Hello World</Text>
             </View>
 
-            <Button color="#81d4fa" banner="Press me!!" />
+            <Button
+                users={[1, 2, 3, 4, 5]}
+                count={189}
+                number={3}
+                color="#81d4fa"
+                banner="Press me!!"
+            />
+
+            <Button
+                users={[1, 2, 3, 4, 5]}
+                count={189}
+                number={3}
+                banner="Press me!!"
+            />
 
         </SafeAreaView>
     )
