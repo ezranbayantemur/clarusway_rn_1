@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SafeAreaView, Text, View, KeyboardAvoidingView, FlatList } from 'react-native';
 
 import { main } from './styles';
-import { TodoInput } from './components';
+import { TodoInput, TodoCard } from './components';
 
 const Main = () => {
     const [list, setList] = useState([])
@@ -17,18 +17,20 @@ const Main = () => {
         setList(newArray);
     }
 
+    const renderTodo = ({ item }) => <TodoCard data={item} />
+
     return (
         <SafeAreaView style={main.container}>
             <KeyboardAvoidingView style={main.container} behavior="padding">
 
                 <View style={main.banner}>
                     <Text style={main.todoText}>TODO</Text>
-                    <Text style={main.todoCount}>10</Text>
+                    <Text style={main.todoCount}>{list.length}</Text>
                 </View>
 
                 <FlatList
                     data={list}
-                    renderItem={() => null}
+                    renderItem={renderTodo}
                 />
 
                 <TodoInput
