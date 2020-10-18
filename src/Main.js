@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SafeAreaView, Text, View, KeyboardAvoidingView, FlatList } from 'react-native';
 
 import { main } from './styles';
-import TodoInput from './components/TodoInput';
+import { TodoInput } from './components';
 
 const Main = () => {
     const [list, setList] = useState([])
@@ -13,10 +13,7 @@ const Main = () => {
             todo: text,
             isDone: false
         }
-        list.p
-        const newArray = [...list]
-        newArray.push(element)
-
+        const newArray = [element, ...list]
         setList(newArray);
     }
 
