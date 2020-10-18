@@ -1,5 +1,12 @@
 import { StyleSheet } from 'react-native';
 
+/**
+ * #303e45
+ * #a7b6bd
+ * #4a636e
+ * #ff9b31
+ */
+
 const main = StyleSheet.create({
     container: {
         flex: 1,
@@ -22,4 +29,19 @@ const main = StyleSheet.create({
     }
 })
 
-export default main;
+const todo_input = StyleSheet.create({
+    inputContainer: {
+        backgroundColor: '#e0e0e0',
+        padding: 10,
+        margin: 10,
+        borderRadius: 10
+    },
+    container: {
+        backgroundColor: '#a7b6bd',
+        padding: 10,
+        margin: 10,
+        borderRadius: 5
+    }
+})
+
+export { main, todo_input };
