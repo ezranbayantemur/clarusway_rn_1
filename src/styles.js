@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 /**
  * #303e45
@@ -41,6 +41,19 @@ const todo_input = StyleSheet.create({
         padding: 10,
         margin: 10,
         borderRadius: 5
+    },
+    buttonContainer: {
+        backgroundColor: '#4a636e',
+        padding: 10,
+        margin: 10,
+        width: Dimensions.get('window').width / 2.5,
+        alignSelf: 'center',
+        borderRadius: 8
+    },
+    buttonText: {
+        color: 'white',
+        fontWeight: 'bold',
+        textAlign: 'center'
     }
 })
 
