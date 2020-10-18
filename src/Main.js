@@ -17,7 +17,23 @@ const Main = () => {
         setList(newArray);
     }
 
-    const renderTodo = ({ item }) => <TodoCard data={item} />
+    function doneTodo(todoId) {
+        const newArray = [...list];
+        const todoIndex = newArray.findIndex(item => item.id == todoId);
+
+        newArray[todoIndex].isDone = !newArray[todoIndex].isDone;
+
+        setList(newArray);
+    }
+
+    const renderTodo = ({ item }) => {
+        return (
+            <TodoCard
+                data={item}
+                onDone={() => doneTodo(item.id)}
+            />
+        )
+    }
 
     return (
         <SafeAreaView style={main.container}>
