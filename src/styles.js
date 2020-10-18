@@ -26,6 +26,10 @@ const main = StyleSheet.create({
     todoCount: {
         fontSize: 35,
         color: "#ff9b31"
+    },
+    emptyComponent: {
+        color: 'white',
+        textAlign: 'center'
     }
 })
 
