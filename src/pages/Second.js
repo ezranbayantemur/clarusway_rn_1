@@ -5,7 +5,7 @@ const Second = (props) => {
     return (
         <SafeAreaView>
             <View>
-                <Text>Second</Text>
+                <Text style={{ fontSize: 40 }}>Second</Text>
             </View>
         </SafeAreaView>
     );
