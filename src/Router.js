@@ -11,6 +11,7 @@ import Second from './pages/Second';
 const Stack = createStackNavigator();
 
 function Router() {
+    console.log("Router");
     return (
         <NavigationContainer>
             <Stack.Navigator
