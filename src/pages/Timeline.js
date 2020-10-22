@@ -44,7 +44,10 @@ const Timeline = (props) => {
 
     const renderPostData = ({ item }) => {
         return (
-            <PostCard post={item} />
+            <PostCard
+                post={item}
+                onSelect={() => props.navigation.navigate('PostPage', { selectedPost: item })}
+            />
         )
     }
 
@@ -56,7 +59,7 @@ const Timeline = (props) => {
                     keyExtractor={(_, index) => index.toString()}
                     data={post_data}
                     renderItem={renderPostData}
-                    ItemSeparatorComponent={() => <View style={{ borderWidth: 1, marginVertical: 5, borderColor: '#bdbdbd' }}/>}
+                    ItemSeparatorComponent={() => <View style={{ borderWidth: 1, marginVertical: 5, borderColor: '#bdbdbd' }} />}
                 />
 
             </View>
