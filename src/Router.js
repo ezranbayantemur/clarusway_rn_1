@@ -9,9 +9,10 @@ import { Friends, Main, Post } from './pages'
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
+
 function MainComponent() {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="PostPage">
             <Stack.Screen name="MainPage" component={Main} />
             <Stack.Screen name="PostPage" component={Post} />
         </Stack.Navigator>
@@ -21,7 +22,7 @@ function MainComponent() {
 function Router() {
     return (
         <NavigationContainer>
-            <Tab.Navigator initialRouteName="PostPage" tabBarOptions={{ activeTintColor: 'purple' }}>
+            <Tab.Navigator initialRouteName="MainComponentPage" tabBarOptions={{ activeTintColor: 'purple' }}>
                 <Tab.Screen name="FriendsPage" component={Friends} options={{ title: 'Arkadaşlar' }} />
                 <Tab.Screen name="MainComponentPage" component={MainComponent} options={{ title: 'Ana Sayfa' }} />
             </Tab.Navigator>
