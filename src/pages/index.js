@@ -1,3 +1,3 @@
-export * from './Main';
+export * from './Timeline';
 export * from './Post';
 export * from './Friends';
