@@ -4,30 +4,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import { Main, Post } from './pages'
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-
-const First = () => {
-    return (
-        <SafeAreaView>
-            <Text>First</Text>
-        </SafeAreaView>
-    )
-}
-const Second = () => {
-    return (
-        <SafeAreaView>
-            <Text>Second</Text>
-        </SafeAreaView>
-    )
-}
 
 function Router() {
     return (
         <NavigationContainer>
-            <Tab.Navigator>
-                <Tab.Screen name="FirstPage" component={First} />
-                <Tab.Screen name="SecondPage" component={Second} />
+            <Tab.Navigator initialRouteName="PostPage" >
+                <Tab.Screen name="MainPage" component={Main} />
+                <Tab.Screen name="PostPage" component={Post} />
             </Tab.Navigator>
         </NavigationContainer>
     );
