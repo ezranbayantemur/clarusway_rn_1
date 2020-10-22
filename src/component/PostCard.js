@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Text, TouchableOpacity } from 'react-native';
+import { Image, Text, View, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 
 // "id": 0,
 // "userName": "tesla_nikola",
@@ -11,11 +11,27 @@ const PostCard = (props) => {
     return (
         <TouchableOpacity>
             <Image
+                style={styles.image}
                 source={{ uri: props.post.img }}
             />
-            <Text>{props.post.userName}</Text>
+            <View style={styles.footerContainer}>
+                <Text style={styles.title}>{props.post.userName}</Text>
+                <Text>{props.post.description}</Text>
+            </View>
         </TouchableOpacity>
     )
 }
 
 export default PostCard;
+
+const styles = StyleSheet.create({
+    image: {
+        height: Dimensions.get('window').height / 3
+    },
+    footerContainer: {
+        padding: 5
+    },
+    title: {
+        fontWeight: 'bold'
+    }
+})

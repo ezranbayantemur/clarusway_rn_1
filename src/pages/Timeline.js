@@ -1,5 +1,6 @@
 import React from 'react';
-import { SafeAreaView, View, Text, Button } from 'react-native';
+import { SafeAreaView, View, Text, Button, FlatList } from 'react-native';
+import PostCard from '../component/PostCard';
 
 const post_data = [
     {
@@ -40,11 +41,23 @@ const post_data = [
 ]
 
 const Timeline = (props) => {
+
+    const renderPostData = ({ item }) => {
+        return (
+            <PostCard post={item} />
+        )
+    }
+
     return (
         <SafeAreaView>
             <View>
 
-                
+                <FlatList
+                    keyExtractor={(_, index) => index.toString()}
+                    data={post_data}
+                    renderItem={renderPostData}
+                    ItemSeparatorComponent={() => <View style={{ borderWidth: 1, marginVertical: 5, borderColor: '#bdbdbd' }}/>}
+                />
 
             </View>
         </SafeAreaView>
