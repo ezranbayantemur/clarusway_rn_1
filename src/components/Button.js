@@ -22,4 +22,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Button;
+export { Button };
