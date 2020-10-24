@@ -5,8 +5,8 @@ import { SafeAreaView, View, Text, FlatList, TouchableOpacity, ActivityIndicator
 import { Button, RestaurantCard } from './components'
 
 const Main = (props) => {
-    const [isLoading, setLoading] = useState(true);
-    const [restaurantData, setRestaurantData] = useState(null);
+    const [isLoading, setLoading] = useState(false);
+    const [restaurantData, setRestaurantData] = useState([]);
 
     // ASYNC-AWAIT
     const fetchRestaurant = async () => {
