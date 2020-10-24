@@ -1,14 +1,14 @@
 import React from 'react';
 import { SafeAreaView, View, Text } from 'react-native';
 
-const Friends = (props) => {
+const Main = (props) => {
     return (
         <SafeAreaView>
             <View>
-                <Text style={{ fontSize: 50 }}>Friends</Text>
+                <Text>Main</Text>
             </View>
         </SafeAreaView>
     );
 }
 
-export { Friends };
+export default Main;
