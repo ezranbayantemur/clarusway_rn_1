@@ -5,9 +5,10 @@ import { SafeAreaView, View, Text, FlatList, TouchableOpacity, ActivityIndicator
 import { Button, RestaurantCard } from './components'
 
 const Main = (props) => {
-    const [isLoading, setLoading] = useState(false);
+    const [isLoading, setLoading] = useState(true);
     const [restaurantData, setRestaurantData] = useState(null);
 
+    // ASYNC-AWAIT
     const fetchRestaurant = async () => {
         setLoading(true);
         const response = await axios.get('https://random-data-api.com/api/restaurant/random_restaurant');
@@ -15,8 +16,18 @@ const Main = (props) => {
         setLoading(false);
     }
 
+    // // THEN-CATCH
+    // const fetchRestaurant = () => {
+    //     setLoading(true);
+    //     axios.get('https://random-data-api.com/api/restaurant/random_restaurant')
+    //         .then(response => {
+    //             setRestaurantData(response.data);
+    //             setLoading(false);
+    //         })
+    // }
+
     useEffect(() => {
-        
+        fetchRestaurant();
     }, [])
 
     return (
@@ -25,7 +36,9 @@ const Main = (props) => {
 
                 {
                     isLoading ?
-                        <ActivityIndicator />
+                        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                            <ActivityIndicator size="large" />
+                        </View>
                         :
                         <RestaurantCard item={restaurantData} />
                 }
