@@ -17,19 +17,18 @@ const RestaurantCard = (props) => {
         <View style={styles.container}>
 
             <View style={styles.header}>
-                <Text style={styles.headerText}>Salty Curry</Text>
+                <Text style={styles.headerText}>{props.item.name}</Text>
             </View>
 
-            <Text style={styles.typeText}>Caribbean</Text>
+            <Text style={styles.typeText}>{props.item.type}</Text>
 
             <Image
                 style={styles.logo}
-                source={{ uri: 'https://loremflickr.com/500/500/restaurant' }}
+                source={{ uri: props.item.logo }}
             />
 
-            <Text style={styles.description}>SVIs mission is to deliver quality products at affordable prices to our independent retailers, wholesalers and food service partners around the world by providing international procurement, distribution, marketing and supply chain management.</Text>
-
-            <Text style={styles.review}>This particular location like the many other restaurants down the block has ample seating and a second floor.</Text>
+            <Text style={styles.description}>{props.item.description}</Text>
+            <Text style={styles.review}>{props.item.review}</Text>
 
         </View>
     )
