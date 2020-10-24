@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Image } from 'react-native';
 
 // "id": 5673,
 // "uid": "76e944b6-5527-4b07-be18-7a6b0a28491f",
@@ -17,9 +17,19 @@ const RestaurantCard = (props) => {
         <View style={styles.container}>
 
             <View style={styles.header}>
-                <Text>Salty Curry</Text>
+                <Text style={styles.headerText}>Salty Curry</Text>
             </View>
 
+            <Text style={styles.typeText}>Caribbean</Text>
+
+            <Image
+                style={styles.logo}
+                source={{ uri: 'https://loremflickr.com/500/500/restaurant' }}
+            />
+
+            <Text style={styles.description}>SVIs mission is to deliver quality products at affordable prices to our independent retailers, wholesalers and food service partners around the world by providing international procurement, distribution, marketing and supply chain management.</Text>
+
+            <Text style={styles.review}>This particular location like the many other restaurants down the block has ample seating and a second floor.</Text>
 
         </View>
     )
@@ -34,6 +44,29 @@ const styles = StyleSheet.create({
     header: {
         padding: 10,
         margin: 5,
-        borderRadius: 5
+        borderRadius: 5,
+        backgroundColor: '#ffe0b2'
+    },
+    headerText: {
+        fontWeight: 'bold',
+        fontSize: 25,
+    },
+    typeText: {
+        fontStyle: 'italic',
+        padding: 10,
+        fontSize: 18,
+        textAlign: 'center'
+    },
+    logo: {
+        height: Dimensions.get('window').height / 3
+    },
+    description: {
+        margin: 5,
+        fontWeight: 'bold'
+    },
+    review: {
+        margin: 5,
+        fontSize: 17,
+        fontStyle: 'italic'
     }
 })
