@@ -20,7 +20,14 @@ const CityList = (props) => {
         fetchCityData();
     }, [])
 
-    const renderCities = ({ item }) => <CityItem cityName={item} />
+    const renderCities = ({ item }) => {
+        return (
+            <CityItem
+                cityName={item}
+                onSelect={() => props.navigation.navigate('Restaurants', { selectedCity: item })}
+            />
+        )
+    }
 
     const renderSeperator = () => <View style={{ borderWidth: 1, borderColor: '#e0e0e0' }} />
 
