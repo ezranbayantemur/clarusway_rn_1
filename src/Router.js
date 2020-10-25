@@ -13,18 +13,15 @@ const Router = () => {
                 <Stack.Screen
                     name="Cities"
                     component={CityList}
-                    options={{ headerShown: false }}
                 />
                 <Stack.Screen
                     name="Restaurants"
                     component={RestaurantList}
-                    options={{ headerShown: false }}
 
                 />
                 <Stack.Screen
                     name="Details"
                     component={RestaurantDetail}
-                    options={{ headerShown: false }}
                 />
             </Stack.Navigator>
         </NavigationContainer>

@@ -9,13 +9,13 @@ const RestaurantList = (props) => {
     const [restaurantList, setRestaurantList] = useState([]);
     const { selectedCity } = props.route.params;
 
-
+    // THEN-CATCH
     const fetchRestaurants = () => {
         axios.get(
             'http://opentable.herokuapp.com/api/restaurants',
             {
                 params: {
-                    city: selectedCity
+                    city: selectedCity,
                 }
             })
             .then(response => {
@@ -32,7 +32,9 @@ const RestaurantList = (props) => {
         return (
             <RestaurantItem
                 restaurant={item}
-                onSelect={() => props.navigation.navigate('Details', { selectedRestaurant: item })}
+                onSelect={() => {
+                    props.navigation.navigate('Details', { selectedRestaurant: item })
+                }}
             />
         )
     }

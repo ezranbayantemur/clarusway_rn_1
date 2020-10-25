@@ -24,7 +24,9 @@ const CityList = (props) => {
         return (
             <CityItem
                 cityName={item}
-                onSelect={() => props.navigation.navigate('Restaurants', { selectedCity: item })}
+                onSelect={() => {
+                    props.navigation.navigate('Restaurants', { selectedCity: item })
+                }}
             />
         )
     }
