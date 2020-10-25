@@ -10,7 +10,7 @@ const RestaurantList = (props) => {
             'http://opentable.herokuapp.com/api/restaurants',
             {
                 params: {
-                    "city": selectedCity
+                    city: selectedCity
                 }
             })
             .then(response => console.log(response))
