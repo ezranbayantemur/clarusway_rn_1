@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, View, Text, FlatList } from 'react-native';
-import { RestaurantItem } from '../components';
+import { RestaurantItem, SearchBar } from '../components';
+
+let originalList = [];
 
 const RestaurantList = (props) => {
     const [restaurantList, setRestaurantList] = useState([]);
@@ -18,6 +20,7 @@ const RestaurantList = (props) => {
             })
             .then(response => {
                 setRestaurantList(response.data.restaurants);
+                originalList = [...response.data.restaurants];
             })
     }
 
@@ -33,11 +36,29 @@ const RestaurantList = (props) => {
         )
     }
 
+    function searchRestaurant(search) {
+        const filteredRestaurants = originalList.filter(restaurant => {
+            const text = search.toUpperCase();
+            const restaurantName = restaurant.name.toUpperCase();
+
+            return restaurantName.indexOf(text) > -1;
+        })
+
+        setRestaurantList(filteredRestaurants);
+    }
+
     return (
         <SafeAreaView>
             <View>
-                <Text>{selectedCity}</Text>
+                <View>
+                    <Text style={{ margin: 5, fontWeight: 'bold', fontSize: 30 }}>{selectedCity} Restaurants</Text>
+                    <SearchBar
+                        placeholder="Search a restaurant..."
+                        onSearch={(value) => searchRestaurant(value)}
+                    />
+                </View>
                 <FlatList
+                    keyExtractor={(_, index) => index.toString()}
                     data={restaurantList}
                     renderItem={renderRestaurants}
                 />
