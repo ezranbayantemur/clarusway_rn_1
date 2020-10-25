@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, View, Text, FlatList } from 'react-native';
 
+import { CityItem } from '../components'
+
 const CityList = (props) => {
     const [cityList, setCityList] = useState([]);
 
@@ -15,7 +17,7 @@ const CityList = (props) => {
         fetchCityData();
     }, [])
 
-    const renderCities = ({ item }) => <Text>{item}</Text>
+    const renderCities = ({ item }) => <CityItem cityName={item} />
 
     return (
         <SafeAreaView>
