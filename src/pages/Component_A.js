@@ -16,7 +16,16 @@ const Component_A = (props) => {
             />
             <Button
                 title="Azalt"
-                onPress={() => dispatch({type: "DECREASE_COUNTER"})}
+                onPress={() => dispatch({ type: "DECREASE_COUNTER" })}
+            />
+            <Button
+                title="Kullanıcı Adı Güncelle"
+                onPress={() => dispatch({
+                    type: "SET_USERNAME",
+                    payload: {
+                        newUserName: "ezran"
+                    }
+                })}
             />
         </View>
     );
