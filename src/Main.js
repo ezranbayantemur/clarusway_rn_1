@@ -1,14 +1,12 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-
-import reducer from './context/reducer';
-import initialState from './context/store';
+import { createStore } from 'redux';
 
 import Component_A from './pages/Component_A';
 import Component_B from './pages/Component_B';
+
+import { reducer, initialState } from './context';
 
 const store = createStore(reducer, initialState);
 
@@ -23,4 +21,4 @@ const Main = (props) => {
     );
 };
 
-export default Main;
+export default Main; 
