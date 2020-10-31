@@ -9,9 +9,9 @@ const Tab = createBottomTabNavigator();
 function Router() {
     return (
         <NavigationContainer>
-            <Tab.Navigator>
-                <Tab.Screen name="FavoritePage" component={Favorites} />
-                <Tab.Screen name="RestaurantPage" component={Restaurants} />
+            <Tab.Navigator initialRouteName="RestaurantsPage">
+                <Tab.Screen name="FavoritesPage" component={Favorites} />
+                <Tab.Screen name="RestaurantsPage" component={Restaurants} />
             </Tab.Navigator>
         </NavigationContainer>
     );
