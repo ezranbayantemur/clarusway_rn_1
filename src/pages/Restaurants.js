@@ -25,13 +25,14 @@ const Restaurants = (props) => {
     const renderList = ({ item }) => <RestaurantItem item={item} />
 
     return (
-        <SafeAreaView>
-            <View>
-                <Text style={{ fontSize: 25, textAlign: 'center', fontWeight: 'bold' }}>Restaurants</Text>
+        <SafeAreaView style={{ flex: 1 }}>
+            <View style={{ flex: 1 }}>
+                <Text style={{ fontSize: 25, textAlign: 'center', fontWeight: 'bold' }}>Restoranlar</Text>
                 <FlatList
                     keyExtractor={(_, index) => index.toString()}
                     data={list}
                     renderItem={renderList}
+                    ItemSeparatorComponent={() => <View style={{ borderWidth: 0.5, borderColor: '#bdbdbd' }} />}
                 />
             </View>
         </SafeAreaView>
