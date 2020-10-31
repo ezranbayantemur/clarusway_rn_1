@@ -8,23 +8,15 @@ const Restaurants = (props) => {
     const [list, setList] = useState([]);
 
     const fetchData = () => {
-        axios.post(
-            'https://worldwide-restaurants.p.rapidapi.com/search',
+        axios.get(
+            'https://opentable.herokuapp.com/api/restaurants',
             {
-                "limit": "30",
-                "language": "en_US",
-                "location_id": "297704",
-                "currency": "USD"
-            },
-            {
-                headers: {
-                    "content-type": "application/json",
-                    "x-rapidapi-host": "worldwide-restaurants.p.rapidapi.com",
-                    "x-rapidapi-key": "e8b94aa0famsh20169f3117020acp1ba769jsn464a1d7d41ca",
+                params: {
+                    "state": "IL"
                 }
             }
         )
-            .then(response => setList(response.data.results.data))
+            .then(response => setList(response.data.restaurants))
             .catch(error => console.log(error))
     }
 
