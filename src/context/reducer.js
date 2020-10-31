@@ -4,7 +4,7 @@ export function reducer(state, action) {
             const newList = [...state.favoriteList];
             newList.push(action.payload.selectedRestaurant);
             state.favoriteList = newList;
-            return { ...state, favoriteList: newList }
+            return { ...state }
 
         // return { 
         //     ...state, 
