@@ -13,7 +13,7 @@ const LoginPage = (props) => {
                 console.log(response);
             })
             .catch((error) => {
-                console.log(error.code);
+                alert(error.code);
             })
     }
 
@@ -25,7 +25,7 @@ const LoginPage = (props) => {
                 console.log(response);
             })
             .catch(error => {
-                console.log(error);
+                alert(error);
             });
     }
 

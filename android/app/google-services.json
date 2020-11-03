@@ -1,35 +1,42 @@
 {
   "project_info": {
-    "project_number": "488709863506",
-    "firebase_url": "https://claruswayfirebase.firebaseio.com",
-    "project_id": "claruswayfirebase",
-    "storage_bucket": "claruswayfirebase.appspot.com"
+    "project_number": "1097491595862",
+    "firebase_url": "https://claruswayrn1.firebaseio.com",
+    "project_id": "claruswayrn1",
+    "storage_bucket": "claruswayrn1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:488709863506:android:644a88fb5b88baa48c478b",
+        "mobilesdk_app_id": "1:1097491595862:android:e5168e5db0ac6a92edf1f7",
         "android_client_info": {
           "package_name": "com.practiceproject"
         }
       },
       "oauth_client": [
         {
-          "client_id": "488709863506-jjpeu55a8eap0aqdj7i7j6lbbpopo5tn.apps.googleusercontent.com",
+          "client_id": "1097491595862-ei6l628dpubduuf771cmn0t7sijevf21.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDGao1Bt0lq5UioJOylJfVZTIwrqAtBhPM"
+          "current_key": "AIzaSyAnL52MWraTQHDP1RAIkJm7ip_UB43igac"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "488709863506-jjpeu55a8eap0aqdj7i7j6lbbpopo5tn.apps.googleusercontent.com",
+              "client_id": "1097491595862-ei6l628dpubduuf771cmn0t7sijevf21.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1097491595862-f5ldbo6397em174antu1d3k0b46cp14s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.practiceProject"
+              }
             }
           ]
         }
