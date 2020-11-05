@@ -2,6 +2,7 @@ import React from 'react';
 import { SafeAreaView, View, Text, TextInput, Button } from 'react-native';
 import auth from '@react-native-firebase/auth';
 
+
 const LoginPage = (props) => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
@@ -13,7 +14,7 @@ const LoginPage = (props) => {
                 console.log(response);
             })
             .catch((error) => {
-                console.log(error.code);
+                alert(error.code);
             })
     }
 
@@ -25,7 +26,7 @@ const LoginPage = (props) => {
                 console.log(response);
             })
             .catch(error => {
-                console.log(error);
+                alert(error);
             });
     }
 
